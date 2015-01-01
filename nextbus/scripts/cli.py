@@ -2,12 +2,12 @@
 
 import click
 
-import pyskel
+import nextbus
 
 
-@click.command('pyskel')
+@click.command('nextbus')
 @click.argument('count', type=int, metavar='N')
 def cli(count):
     """Echo a value `N` number of times"""
     for i in range(count):
-        click.echo(pyskel.has_legs)
+        click.echo(nextbus.has_legs)

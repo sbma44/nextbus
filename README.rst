@@ -1,11 +1,11 @@
-pyskel
+nextbus
 ======
 
-.. image:: https://travis-ci.org/mapbox/pyskel.svg
-   :target: https://travis-ci.org/mapbox/pyskel
+.. image:: https://travis-ci.org/mapbox/nextbus.svg
+   :target: https://travis-ci.org/mapbox/nextbus
 
-.. image:: https://coveralls.io/repos/mapbox/pyskel/badge.png
-   :target: https://coveralls.io/r/mapbox/pyskel
+.. image:: https://coveralls.io/repos/mapbox/nextbus/badge.png
+   :target: https://coveralls.io/r/mapbox/nextbus
 
 A skeleton of a Python package with CLI and test suite included.
    
@@ -14,21 +14,21 @@ A skeleton of a Python package with CLI and test suite included.
 Customization quick start
 -------------------------
 
-To use pyskel as the start of a new project, do the following, preferably in
+To use nextbus as the start of a new project, do the following, preferably in
 a virtual environment. Clone the repo.
 
 .. code-block:: console
 
-    git clone https://github.com/mapbox/pyskel myproject
+    git clone https://github.com/mapbox/nextbus myproject
     cd myproject
 
-Replace all occurrences of 'pyskel' with the name of your own project.
+Replace all occurrences of 'nextbus' with the name of your own project.
 (Note: the commands below require bash, find, and sed and are yet tested only on OS X.)
 
 .. code-block:: console
 
-    if [ -d pyskel ]; then find . -not -path './.git*' -type f -exec sed -i '' -e 's/pyskel/myproject/g' {} + ; fi
-    mv pyskel myproject
+    if [ -d nextbus ]; then find . -not -path './.git*' -type f -exec sed -i '' -e 's/nextbus/myproject/g' {} + ; fi
+    mv nextbus myproject
 
 Then install in locally editable (``-e``) mode and run the tests.
 
@@ -44,18 +44,18 @@ Finally, give the command line program a try.
     myproject --help
     myproject 4
 
-To help prevent uncustomized forks of pyskel from being uploaded to PyPI,
+To help prevent uncustomized forks of nextbus from being uploaded to PyPI,
 I've configured the setup's upload command to dry run. Make sure to remove
 this configuration from
 `setup.cfg <https://docs.python.org/2/install/index.html#inst-config-syntax>`__
-when you customize pyskel.
+when you customize nextbus.
 
 Please also note that the Travis-CI and Coveralls badge URLs and links in the README
 contain the string 'mapbox.' You'll need to change this to your own user or organization
 name and turn on the webhooks for your new project.
 
 A post on the Mapbox blog has more information about this project:
-https://www.mapbox.com/blog/pyskel/.
+https://www.mapbox.com/blog/nextbus/.
 
 See also
 --------
