@@ -13,21 +13,18 @@ setup(name='nextbus',
       long_description=long_description,
       classifiers=[],
       keywords='',
-      author=u"Sean Gillies",
-      author_email='sean@mapbox.com',
-      url='https://github.com/mapbox/nextbus',
+      author=u"Tom Lee",
+      author_email='thomas.j.lee@gmail.com',
+      url='https://github.com/sbma44/nextbus',
       license='MIT',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'click'
+          'scrapelib',
+          'BeautifulSoup'
       ],
       extras_require={
           'test': ['pytest'],
-      },
-      entry_points="""
-      [console_scripts]
-      nextbus=nextbus.scripts.cli:cli
-      """
+      }
       )
