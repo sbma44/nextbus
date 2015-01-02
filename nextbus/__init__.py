@@ -1,20 +1,17 @@
-from settings import *
 import scrapelib
 import time
 import re
 import json
-from BeautifulSoup import BeautifulSoup
-from soupselect import select
 
-class NextbusPredictor(object):
+class Nextbus(object):
 	"""Tracks Nextbus arrival times"""
 	def __init__(self, routes):
-		super(NextbusPredictor, self).__init__()
-		self.scraper = scrapelib.Scraper(requests_per_minute=10, follow_robots=False)
+		super(Nextbus, self).__init__()
+		self.scraper = scrapelib.Scraper(requests_per_minute=10)
 
 		self.api_key = self.get_api_key()
 
-		self.routes = map(lambda x: str(x), routes)
+		self.routes = routes
 		self.predictions = {}
 		self.last_refresh = {}		
 		for r in self.routes:
@@ -43,7 +40,7 @@ class NextbusPredictor(object):
 		"""Force a refresh of a specific route"""
 		route = str(route)
 
-		url = NEXTBUS_URLS.get(str(route), False)
+		url = self.routes.get(route, False)
 		if not url:
 			return
 		if callable(url):
@@ -118,11 +115,6 @@ class NextbusPredictor(object):
 		matching_arrival = sorted(arrivals, key=lambda x: x[0])[n]
 		return (matching_arrival[1], self._adjust_prediction_for_elapsed_time(matching_arrival[0], matching_arrival[1]))
 
-
-def main():
-	nb = NextbusPredictor(['G2'])
-	nb.refresh('G2')
-	print nb.predictions
 
 if __name__ == '__main__':
 	main()

@@ -21,8 +21,7 @@ setup(name='nextbus',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'scrapelib',
-          'BeautifulSoup'
+          'scrapelib'
       ],
       extras_require={
           'test': ['pytest'],
